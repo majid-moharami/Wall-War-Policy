@@ -1,222 +1,515 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - WallWar</title>
-  <meta name="description" content="Official Privacy Policy for WallWar Android Game by Majid Moharami. Direct, single-page Google Play User Data and Data Safety compliance document.">
+  <meta name="description" content="Official Privacy Policy and Google Play User Data Compliance Portal for WallWar by Majid Moharami. Transparent disclosures on device IDs, analytics, data deletion, and user safety.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-primary: #0a0e17;
-      --bg-secondary: #121826;
-      --bg-card: #182234;
-      --border-color: #233148;
-      --text-primary: #e6edf8;
-      --text-secondary: #94a3b8;
-      --accent-cyan: #00e5ff;
-      --accent-purple: #8b5cf6;
-      --accent-green: #10b981;
+      --bg-base: #060913;
+      --bg-surface: rgba(16, 23, 41, 0.7);
+      --bg-surface-elevated: rgba(22, 33, 58, 0.85);
+      --bg-card: rgba(17, 26, 46, 0.6);
+      --bg-card-hover: rgba(26, 39, 69, 0.75);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(0, 242, 254, 0.35);
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --accent-cyan: #00f2fe;
+      --accent-blue: #4facfe;
+      --accent-purple: #9d4edd;
+      --accent-emerald: #10b981;
       --accent-amber: #f59e0b;
-      --link-color: #38bdf8;
-      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
+      --gradient-cyan: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+      --gradient-emerald: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      --gradient-purple: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+      --shadow-glow: 0 0 30px rgba(0, 242, 254, 0.15);
+      --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: var(--font-main);
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.65;
-      padding: 0;
-      margin: 0;
+      font-family: var(--font-body);
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.7;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(157, 78, 221, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+      background-attachment: fixed;
+      min-height: 100vh;
       -webkit-font-smoothing: antialiased;
     }
 
-    header {
-      background: linear-gradient(135deg, rgba(14, 22, 38, 0.95), rgba(18, 24, 38, 0.98));
-      border-bottom: 1px solid var(--border-color);
-      padding: 2.5rem 1.5rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(12px);
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-base);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-cyan);
     }
 
-    .header-container {
-      max-width: 900px;
+    /* Header & Navigation */
+    header {
+      background: rgba(8, 13, 26, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .header-inner {
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 1.25rem 2rem;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(79, 172, 254, 0.1));
+      border: 1px solid var(--border-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+    }
+
+    .brand-logo svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .brand-text h1 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-text p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
       gap: 0.75rem;
     }
 
-    .badge {
+    .status-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(0, 229, 255, 0.1);
-      border: 1px solid rgba(0, 229, 255, 0.3);
-      color: var(--accent-cyan);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.75rem;
+      padding: 0.4rem 0.85rem;
       border-radius: 9999px;
-      width: fit-content;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .app-name-tag {
-      color: var(--accent-cyan);
-    }
-
-    .meta-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      margin-top: 0.25rem;
-    }
-
-    .meta-item strong {
-      color: var(--text-primary);
-    }
-
-    main {
-      max-width: 900px;
-      margin: 2rem auto 4rem;
-      padding: 0 1.5rem;
-    }
-
-    .direct-notice {
-      background: rgba(16, 185, 129, 0.1);
+      background: rgba(16, 185, 129, 0.12);
       border: 1px solid rgba(16, 185, 129, 0.3);
-      border-left: 4px solid var(--accent-green);
-      border-radius: 10px;
-      padding: 1.25rem;
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
     }
 
-    .direct-notice strong {
-      color: var(--accent-green);
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulse 2s infinite;
     }
 
-    .summary-box {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-left: 4px solid var(--accent-cyan);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 2.5rem;
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
     }
 
-    .summary-box h3 {
-      font-size: 1.15rem;
-      color: var(--accent-cyan);
-      margin-bottom: 0.5rem;
-    }
-
-    .summary-box p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .table-of-contents {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1.25rem 1.75rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .table-of-contents h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      color: #fff;
-    }
-
-    .toc-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 0.5rem 1.5rem;
-      list-style-type: none;
-    }
-
-    .toc-grid li a {
-      color: var(--link-color);
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 600;
       text-decoration: none;
-      font-size: 0.92rem;
-      transition: color 0.15s ease;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid transparent;
     }
 
-    .toc-grid li a:hover {
-      color: var(--accent-cyan);
-      text-decoration: underline;
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border-color: var(--border-subtle);
     }
 
-    section {
-      margin-bottom: 2.75rem;
-      scroll-margin-top: 140px;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent-cyan);
       color: #ffffff;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.6rem;
-      margin-bottom: 1.25rem;
+      transform: translateY(-1px);
+    }
+
+    /* Main Container & Grid */
+    .container {
+      max-width: 1200px;
+      margin: 2.5rem auto 5rem;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* Sidebar Table of Contents */
+    aside {
+      position: sticky;
+      top: 90px;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+
+    .toc-card {
+      background: var(--bg-surface);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .toc-title {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .toc-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      border-radius: 8px;
+      transition: all 0.15s ease;
+    }
+
+    .toc-link:hover, .toc-link.active {
+      color: var(--accent-cyan);
+      background: rgba(0, 242, 254, 0.08);
+      transform: translateX(4px);
+    }
+
+    .toc-link span.num {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    .toc-link:hover span.num, .toc-link.active span.num {
+      color: var(--accent-cyan);
+    }
+
+    .sidebar-contact {
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .sidebar-contact p {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar-email {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    /* Content Area */
+    .content {
+      min-width: 0;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(16, 24, 43, 0.8), rgba(24, 38, 70, 0.85));
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    .hero-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0, 242, 254, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-cyan);
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.25);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      max-width: 720px;
+    }
+
+    .meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.85rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .meta-pill strong {
+      color: #ffffff;
+    }
+
+    /* Verification Notice Card */
+    .notice-card {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .notice-icon {
+      width: 28px;
+      height: 28px;
+      color: #34d399;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .notice-content h4 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: #34d399;
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+
+    .notice-content p {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Search & Filter Bar */
+    .search-bar {
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 0.85rem 1.25rem 0.85rem 3rem;
+      color: #ffffff;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+      background: var(--bg-surface-elevated);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
+    }
+
+    /* Sections & Typography */
+    section {
+      margin-bottom: 3.25rem;
+      scroll-margin-top: 100px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.25);
+      color: var(--accent-cyan);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.88rem;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
     h3 {
+      font-family: var(--font-heading);
       font-size: 1.15rem;
       font-weight: 600;
-      color: #f1f5f9;
-      margin: 1.25rem 0 0.5rem;
+      color: #e2e8f0;
+      margin: 1.5rem 0 0.5rem;
     }
 
     p {
-      color: var(--text-secondary);
+      color: var(--text-muted);
       margin-bottom: 1rem;
-      font-size: 0.98rem;
+      font-size: 0.96rem;
     }
 
     strong {
-      color: var(--text-primary);
+      color: #ffffff;
+      font-weight: 600;
     }
 
     ul, ol {
-      color: var(--text-secondary);
+      color: var(--text-muted);
       margin-left: 1.5rem;
       margin-bottom: 1.25rem;
-      font-size: 0.96rem;
+      font-size: 0.95rem;
     }
 
     li {
@@ -226,458 +519,825 @@
     a {
       color: var(--link-color);
       text-decoration: none;
-      word-break: break-word;
+      transition: color 0.15s ease;
     }
 
     a:hover {
-      text-decoration: underline;
       color: var(--accent-cyan);
+      text-decoration: underline;
     }
 
-    .card {
+    /* Cards & Grids */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .glass-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 1.25rem;
-      margin: 1rem 0;
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .card.highlight {
-      border-color: rgba(0, 229, 255, 0.4);
-      background: rgba(0, 229, 255, 0.03);
+    .glass-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
     }
 
-    .card.success {
-      border-color: rgba(16, 185, 129, 0.4);
-      background: rgba(16, 185, 129, 0.03);
+    .glass-card.highlight {
+      border-color: rgba(0, 242, 254, 0.35);
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.04), rgba(79, 172, 254, 0.02));
+    }
+
+    .glass-card.emerald {
+      border-color: rgba(16, 185, 129, 0.35);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.04), rgba(5, 150, 105, 0.02));
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Modern Responsive Data Table */
+    .table-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-card);
     }
 
     .data-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1.25rem 0;
       font-size: 0.92rem;
-      background: var(--bg-secondary);
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid var(--border-color);
+      text-align: left;
     }
 
     .data-table th, .data-table td {
-      padding: 0.85rem 1rem;
-      text-align: left;
-      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .data-table th {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.04);
       color: #ffffff;
+      font-family: var(--font-heading);
       font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .data-table tr:last-child td {
       border-bottom: none;
     }
 
+    .data-table tbody tr {
+      transition: background 0.15s ease;
+    }
+
+    .data-table tbody tr:hover {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Tags & Pills */
     .tag {
       display: inline-block;
       font-family: var(--font-mono);
-      font-size: 0.8rem;
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #cbd5e1;
+      font-size: 0.78rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      margin: 0.15rem 0.15rem 0.15rem 0;
     }
 
     .tag.cyan {
-      background: rgba(0, 229, 255, 0.15);
+      background: rgba(0, 242, 254, 0.12);
+      border-color: rgba(0, 242, 254, 0.3);
       color: var(--accent-cyan);
     }
 
-    .tag.green {
-      background: rgba(16, 185, 129, 0.15);
-      color: var(--accent-green);
+    .tag.emerald {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: #34d399;
     }
 
-    .tag.amber {
-      background: rgba(245, 158, 11, 0.15);
-      color: var(--accent-amber);
-    }
-
-    .delete-steps {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .delete-steps ol {
-      margin-bottom: 0;
-    }
-
-    .contact-box {
-      background: linear-gradient(135deg, rgba(18, 24, 38, 0.9), rgba(24, 34, 52, 0.9));
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1.75rem;
+    /* Timeline Stepper for Data Deletion */
+    .stepper {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 1.25rem;
+      margin: 1.5rem 0;
     }
 
-    .contact-email {
-      font-family: var(--font-mono);
+    .step-item {
+      display: flex;
+      gap: 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--gradient-cyan);
+      color: #060913;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-family: var(--font-heading);
       font-size: 1.05rem;
-      color: var(--accent-cyan);
-      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.35rem;
     }
 
-    footer {
-      border-top: 1px solid var(--border-color);
-      background-color: var(--bg-primary);
-      text-align: center;
-      padding: 2.5rem 1.5rem;
-      color: #64748b;
+    .step-content p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* Contact Box */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(16, 25, 45, 0.9), rgba(24, 38, 70, 0.95));
+      border: 1px solid var(--border-glow);
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: var(--shadow-glow);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .contact-col h4 {
+      font-family: var(--font-heading);
       font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-dim);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-col p {
+      font-size: 1.05rem;
+      color: #ffffff;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .contact-col a {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    .contact-col a:hover {
+      text-decoration: underline;
+    }
+
+    /* Floating Toast */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #10b981;
+      color: #ffffff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+      z-index: 2000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      background: #04060d;
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.88rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      aside {
+        display: none;
+      }
+      .hero-title {
+        font-size: 1.7rem;
+      }
     }
 
     @media (max-width: 640px) {
-      h1 {
-        font-size: 1.7rem;
-      }
-      .meta-bar {
+      .header-inner {
         flex-direction: column;
-        gap: 0.4rem;
+        align-items: flex-start;
+        padding: 1rem 1.25rem;
       }
-      .data-table {
-        display: block;
-        overflow-x: auto;
+      .header-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .container {
+        padding: 0 1.25rem;
+        margin-top: 1.5rem;
+      }
+      .hero-banner {
+        padding: 1.5rem;
+      }
+      .meta-pills {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .contact-card {
+        padding: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top Header Bar -->
   <header>
-    <div class="header-container">
-      <div class="badge">Official Google Play Developer Policy Compliance Document</div>
-      <h1>Privacy Policy for <span class="app-name-tag">WallWar</span></h1>
-      <div class="meta-bar">
-        <div class="meta-item">Application: <strong>WallWar (com.wallwar.game)</strong></div>
-        <div class="meta-item">Developer: <strong>Majid Moharami</strong></div>
-        <div class="meta-item">Developer Email: <strong>Majid.moharami79@gmail.com</strong></div>
-        <div class="meta-item">Support & Compliance: <strong>wallwar.game@gmail.com</strong></div>
-        <div class="meta-item">Effective Date: <strong>October 2, 2026</strong></div>
+    <div class="header-inner">
+      <div class="brand-group">
+        <div class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12h6"/>
+            <path d="M12 9v6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>WallWar <span style="font-weight: 400; color: var(--text-muted); font-size: 1rem;">Compliance</span></h1>
+          <p>Official Google Play User Data &amp; Privacy Portal</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="status-badge">
+          <div class="pulse-dot"></div>
+          <span>Direct Single-Page Link</span>
+        </div>
+        <button class="btn btn-secondary" onclick="copyPolicyUrl()" title="Copy live URL for Google Play Console">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          <span>Copy URL</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <main>
-    <!-- Direct Policy Link Declaration (Directly resolves Google Play Console "Privacy policy link is indirect" enforcement) -->
-    <div class="direct-notice">
-      <strong>Direct Access Verification:</strong> This web document is the authoritative, single-page, direct Privacy Policy for <strong>WallWar</strong> (<code>com.wallwar.game</code>). It is publicly accessible without authentication, landing page redirects, or intermediate navigation, satisfying all requirements of the Google Play Console <em>User Data Policy</em>.
-    </div>
-
-    <!-- Executive Summary for Google Play Reviewers & Crawlers -->
-    <div class="summary-box">
-      <h3>Policy Overview & Play Console Data Safety Alignment</h3>
-      <p>
-        This Privacy Policy explains how <strong>WallWar</strong> ("we", "our", or "the Game"), created and maintained by independent developer <strong>Majid Moharami</strong>, collects, processes, and protects user data. This document directly corresponds to our declarations in the Google Play Console <strong>Data Safety Section</strong>, covering <em>Device or other IDs</em>, <em>App performance and diagnostics</em>, <em>In-App purchases</em>, <em>Personal information sharing</em>, and <em>Account / Data deletion procedures</em>.
-      </p>
-    </div>
-
-    <!-- Table of Contents -->
-    <nav class="table-of-contents" aria-label="Table of Contents">
-      <h2>Table of Contents</h2>
-      <ul class="toc-grid">
-        <li><a href="#identification">1. Developer & App Identification</a></li>
-        <li><a href="#data-collection">2. Data We Collect & Declarations</a></li>
-        <li><a href="#device-ids">3. Device or Other Identifiers</a></li>
-        <li><a href="#location-data">4. Location Data Minimization</a></li>
-        <li><a href="#data-sharing">5. Personal Info Sharing & No Sale</a></li>
-        <li><a href="#purpose">6. Purpose of Data Processing</a></li>
-        <li><a href="#third-parties">7. Third-Party Services & SDKs</a></li>
-        <li><a href="#security">8. Data Security & Encryption</a></li>
-        <li><a href="#retention-deletion">9. Data Retention & Deletion Rights</a></li>
-        <li><a href="#children">10. Children's Privacy</a></li>
-        <li><a href="#changes">11. Policy Updates & Direct Access</a></li>
-        <li><a href="#contact">12. Contact Information</a></li>
-      </ul>
-    </nav>
-
-    <!-- 1. Identification -->
-    <section id="identification">
-      <h2>1. Developer & App Identification</h2>
-      <p>
-        <strong>WallWar</strong> is a tactical turn-based strategy board game published on Google Play under package identifier <code>com.wallwar.game</code>.
-      </p>
-      <ul>
-        <li><strong>App Title:</strong> WallWar</li>
-        <li><strong>Package Identifier:</strong> com.wallwar.game</li>
-        <li><strong>Developer / Entity Name:</strong> Majid Moharami</li>
-        <li><strong>Developer Personal Email:</strong> <a href="mailto:Majid.moharami79@gmail.com">Majid.moharami79@gmail.com</a></li>
-        <li><strong>Official Game Support & Compliance Email:</strong> <a href="mailto:wallwar.game@gmail.com">wallwar.game@gmail.com</a></li>
-        <li><strong>Direct Policy URL:</strong> <a href="https://majid-moharami.github.io/Wall-War-Policy/">https://majid-moharami.github.io/Wall-War-Policy/</a></li>
-      </ul>
-    </section>
-
-    <!-- 2. Data Collection -->
-    <section id="data-collection">
-      <h2>2. Categories of Data We Collect (Play Console Data Safety Form)</h2>
-      <p>
-        We strictly practice data minimization. We only collect data necessary to operate game matchmaking, maintain leaderboards, prevent cheating, and provide optional advertisements:
-      </p>
-
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Data Category</th>
-            <th>Data Elements</th>
-            <th>Collection Mode</th>
-            <th>Purpose & Play Console Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Device or Other IDs</strong></td>
-            <td>
-              <span class="tag cyan">Android ID</span>, 
-              <span class="tag">Google Advertising ID (AAID)</span>, 
-              <span class="tag">Firebase Installation ID</span>, 
-              <span class="tag">Nakama User UUID</span>
-            </td>
-            <td>Automatic</td>
-            <td>Guest account authentication, fraud prevention, anti-cheat, multiplayer matchmaking, and optional ad frequency capping.</td>
-          </tr>
-          <tr>
-            <td><strong>App Performance & Diagnostics</strong></td>
-            <td>Crash logs, match disconnect recovery metrics, framerate, session duration.</td>
-            <td>Automatic (via Firebase Crashlytics & Analytics)</td>
-            <td>Game stability, bug fixes, real-time connection recovery.</td>
-          </tr>
-          <tr>
-            <td><strong>Usage & Analytics</strong></td>
-            <td>In-game moves, matches won/lost, virtual coin balance, skins selected.</td>
-            <td>Automatic (via Firebase)</td>
-            <td>Game balancing, matchmaking rank adjustment, and feature improvements.</td>
-          </tr>
-          <tr>
-            <td><strong>Personal & Account Info</strong> (Optional)</td>
-            <td>Display name, email address, optional profile avatar.</td>
-            <td>User-provided (via Google Sign-In or Profile Editor)</td>
-            <td>Account management, cloud state synchronization, leaderboard display.</td>
-          </tr>
-          <tr>
-            <td><strong>Financial / Purchases</strong></td>
-            <td>Google Play order IDs, purchase tokens, SKU identifier. (No credit card or banking info).</td>
-            <td>Via Google Play Billing</td>
-            <td>Fulfilling in-app coin purchases, preventing billing fraud.</td>
-          </tr>
-          <tr>
-            <td><strong>Location Data</strong></td>
-            <td><span class="tag green">None</span> (Zero Location Data Collected)</td>
-            <td>Not collected</td>
-            <td>We do not access or collect GPS, coarse, or fine location data.</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- 3. Device or Other Identifiers -->
-    <section id="device-ids">
-      <h2>3. Device or Other Identifiers (Play Console Declaration)</h2>
-      <div class="card highlight">
-        <p>
-          In our Play Console Data Safety declaration, we explicitly disclose the collection of <strong>Device or other IDs</strong>:
-        </p>
-        <ul>
-          <li>
-            <strong>Android ID (Settings.Secure.ANDROID_ID) / UUID:</strong>
-            When playing as Guest, the app uses a hardware-backed identifier or unique UUID transmitted securely over HTTPS/TLS to our Nakama multiplayer server. This enables players to preserve earned coins, unlocked board skins, and trophy rankings across app restarts without forcing account registration, while preventing multi-account smurfing and matchmaking abuse.
-          </li>
-          <li>
-            <strong>Google Advertising ID (AAID):</strong>
-            Utilized by Google Mobile Ads (AdMob) and Adivery SDK for optional rewarded video ads (e.g., watch an ad to earn in-game coins) and interstitial ads. Users can reset or delete their advertising ID at any time in Android Settings (<code>Settings &gt; Google &gt; Ads &gt; Delete advertising ID</code>).
-          </li>
-          <li>
-            <strong>Firebase Installation ID (FID) & FCM Token:</strong>
-            Assigned uniquely to the app installation instance to facilitate push notifications (such as daily reward reminders or opponent turn notifications) and measure overall installation retention metrics.
-          </li>
-          <li>
-            <strong>Nakama Server User ID:</strong>
-            A unique cryptographic UUID generated on our multiplayer servers to match duelists into competitive arenas and update seasonal leaderboard rankings.
-          </li>
+  <div class="container">
+    <!-- Left Sticky Sidebar Table of Contents -->
+    <aside>
+      <div class="toc-card">
+        <div class="toc-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          <span>Document Navigation</span>
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <li><a href="#identification" class="toc-link"><span class="num">01</span> Developer &amp; App ID</a></li>
+          <li><a href="#data-collection" class="toc-link"><span class="num">02</span> Data We Collect</a></li>
+          <li><a href="#device-ids" class="toc-link"><span class="num">03</span> Device &amp; Other IDs</a></li>
+          <li><a href="#location-data" class="toc-link"><span class="num">04</span> Location Minimization</a></li>
+          <li><a href="#data-sharing" class="toc-link"><span class="num">05</span> Personal Info &amp; Sharing</a></li>
+          <li><a href="#purpose" class="toc-link"><span class="num">06</span> Purpose of Processing</a></li>
+          <li><a href="#third-parties" class="toc-link"><span class="num">07</span> Third-Party SDKs</a></li>
+          <li><a href="#security" class="toc-link"><span class="num">08</span> Security &amp; TLS</a></li>
+          <li><a href="#retention-deletion" class="toc-link"><span class="num">09</span> Retention &amp; Deletion</a></li>
+          <li><a href="#children" class="toc-link"><span class="num">10</span> Children's Privacy</a></li>
+          <li><a href="#changes" class="toc-link"><span class="num">11</span> Direct Policy Verification</a></li>
+          <li><a href="#contact" class="toc-link"><span class="num">12</span> Developer Contact</a></li>
         </ul>
-      </div>
-    </section>
 
-    <!-- 4. Location Data Minimization -->
-    <section id="location-data">
-      <h2>4. Location Data Minimization (Google Play Policy Compliance)</h2>
-      <div class="card success">
-        <p>
-          In compliance with Google Play's <em>"Minimize your use of location data to protect user privacy"</em> guidance:
+        <div class="sidebar-contact">
+          <p>Compliance Inquiries:</p>
+          <a class="sidebar-email" href="mailto:wallwar.game@gmail.com">wallwar.game@gmail.com</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content">
+
+      <!-- Hero Header Card -->
+      <div class="hero-banner">
+        <div class="hero-tag">Official Google Play Compliance Document</div>
+        <h1 class="hero-title">Privacy Policy for WallWar</h1>
+        <p class="hero-desc">
+          Transparent disclosures regarding user safety, device identifiers, anti-cheat security, telemetry, and complete user data deletion procedures for <strong>WallWar</strong> (<code>com.wallwar.game</code>).
         </p>
-        <ul>
-          <li><strong>Zero Location Permissions:</strong> WallWar does not declare or request <code>ACCESS_FINE_LOCATION</code>, <code>ACCESS_COARSE_LOCATION</code>, or background location permissions in its manifest.</li>
-          <li><strong>No GPS or Geolocation Tracking:</strong> We do not track, collect, record, or share GPS coordinates or geographic paths of users.</li>
-          <li><strong>Network Routing:</strong> Standard IP addresses are used solely at the socket layer to route multiplayer packets to the nearest game server and are not converted into precise physical user addresses.</li>
-        </ul>
+
+        <div class="meta-pills">
+          <div class="meta-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            Developer: <strong>Majid Moharami</strong>
+          </div>
+          <div class="meta-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            App: <strong>WallWar (com.wallwar.game)</strong>
+          </div>
+          <div class="meta-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Effective: <strong>October 2, 2026</strong>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <!-- 5. Personal Info Sharing & No Sale -->
-    <section id="data-sharing">
-      <h2>5. Personal Information Sharing & No Sale of Data</h2>
-      <p>
-        In accordance with Google Play's <em>"Shares Personal Information"</em> policy and global data protection standards:
-      </p>
-      <ul>
-        <li><strong>No Sale of Data:</strong> WallWar does <strong>never sell, rent, lease, or monetize</strong> user personal data, device identifiers, or gameplay records to third-party data brokers or advertisers.</li>
-        <li><strong>Strict Service Provider Sharing:</strong> Data is only transmitted to certified technical infrastructure providers (Google Play Services, Firebase, Nakama, AdMob, Adivery) exclusively to execute necessary game functions (matchmaking, leaderboards, crash monitoring, and ad serving).</li>
-        <li><strong>No Cross-App Tracking:</strong> We do not merge user identity across unrelated applications or track users across external third-party apps or websites.</li>
-      </ul>
-    </section>
+      <!-- Direct Link Verification Alert Box -->
+      <div class="notice-card" id="direct-notice">
+        <svg class="notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+        <div class="notice-content">
+          <h4>Direct Link Compliance Verification (Google Play Console)</h4>
+          <p>
+            This web page is the authoritative, direct, single-page Privacy Policy for <strong>WallWar</strong>. It renders the entire policy text immediately without redirects, landing pages, or multi-step navigation, fully complying with Google Play's <em>User Data Policy</em> requirement that privacy policy links point directly to the full text.
+          </p>
+        </div>
+      </div>
 
-    <!-- 6. Purpose -->
-    <section id="purpose">
-      <h2>6. Purpose of Data Processing</h2>
-      <p>We process collected data exclusively for disclosed operational purposes:</p>
-      <ol>
-        <li><strong>Core App Functionality:</strong> Real-time player-versus-player (PvP) matchmaking, validating wall placements and pawn moves, recording match history, maintaining leaderboards, and honoring virtual coin balances.</li>
-        <li><strong>Account Authentication & State Synchronization:</strong> Allowing players to save duel records locally and in the cloud, and restore progress across sessions.</li>
-        <li><strong>Security, Anti-Cheat & Fraud Prevention:</strong> Preventing automated botting, detecting modified game clients, verifying in-app billing tokens, and maintaining fair competitive integrity.</li>
-        <li><strong>Analytics & Diagnostics:</strong> Monitoring server uptime, identifying disconnect causes during live online matches, and assessing which arenas or skins are popular.</li>
-        <li><strong>Advertising & In-Game Monetization:</strong> Serving optional rewarded video ads and interstitials through verified mobile ad networks.</li>
-      </ol>
-    </section>
+      <!-- Quick Interactive Filter -->
+      <div class="search-bar">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="policy-filter" class="search-input" placeholder="Search policy topics (e.g., 'Device ID', 'Delete Account', 'Location', 'AdMob')..." onkeyup="filterSections()">
+      </div>
 
-    <!-- 7. Third-Party Services -->
-    <section id="third-parties">
-      <h2>7. Third-Party Service Providers & External Policies</h2>
-      <p>
-        WallWar integrates trusted industry-standard SDKs. Each third-party provider operates under their own privacy policy regarding data collection and security:
-      </p>
-      <ul>
-        <li>
-          <strong>Google Play Services:</strong> Core platform support, in-app billing, and Credential Manager.
-          <br><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>
-        </li>
-        <li>
-          <strong>Google AdMob (Google Mobile Ads SDK):</strong> Displaying rewarded and interstitial advertisements.
-          <br><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">https://support.google.com/admob/answer/6128543</a>
-        </li>
-        <li>
-          <strong>Google Analytics for Firebase & Firebase Crashlytics:</strong> App usage event tracking and crash metrics.
-          <br><a href="https://firebase.google.com/policies/analytics" target="_blank" rel="noopener noreferrer">https://firebase.google.com/policies/analytics</a>
-        </li>
-        <li>
-          <strong>Firebase Cloud Messaging (FCM) & Firebase Auth:</strong> Push notification delivery and Google Sign-In authentication.
-          <br><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">https://firebase.google.com/support/privacy</a>
-        </li>
-        <li>
-          <strong>Google Play In-App Billing:</strong> Handling in-game coin pack transactions.
-          <br><a href="https://play.google.com/about/play-terms/" target="_blank" rel="noopener noreferrer">https://play.google.com/about/play-terms/</a>
-        </li>
-        <li>
-          <strong>Heroic Labs Nakama:</strong> Open-source, production multiplayer game server handling real-time matches, user accounts, and leaderboards.
-          <br><a href="https://heroiclabs.com/privacy-policy/" target="_blank" rel="noopener noreferrer">https://heroiclabs.com/privacy-policy/</a>
-        </li>
-        <li>
-          <strong>Adivery Ad SDK:</strong> Rewarded and interstitial video advertising platform.
-          <br><a href="https://adivery.com/privacy/" target="_blank" rel="noopener noreferrer">https://adivery.com/privacy/</a>
-        </li>
-      </ul>
-    </section>
-
-    <!-- 8. Security -->
-    <section id="security">
-      <h2>8. Data Security & Encryption in Transit</h2>
-      <p>
-        We are committed to protecting user data through state-of-the-art security practices:
-      </p>
-      <ul>
-        <li><strong>Encryption in Transit:</strong> All data transmitted between the WallWar client application and backend servers (including Nakama APIs, Firebase, and Google APIs) is encrypted using modern <strong>Transport Layer Security (TLS 1.2 / TLS 1.3, HTTPS)</strong> and <strong>Secure WebSockets (WSS)</strong>.</li>
-        <li><strong>Payment Card Safety:</strong> WallWar never handles or stores sensitive payment card details or banking data. All payment transactions are executed exclusively within Google Play's PCI-DSS compliant billing infrastructure.</li>
-        <li><strong>Access Controls:</strong> Server administrative interfaces and game databases are strictly secured behind firewall barriers and tokenized authentication.</li>
-      </ul>
-    </section>
-
-    <!-- 9. Retention & Deletion -->
-    <section id="retention-deletion">
-      <h2>9. Data Retention & Account Deletion (Google Play Compliance)</h2>
-      <p>
-        In accordance with Google Play's <strong>User Data policy regarding account and data deletion</strong>, users have full control over their personal data and game accounts.
-      </p>
-      <div class="card">
-        <h3>How Long We Retain Data</h3>
+      <!-- 1. Identification -->
+      <section id="identification" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">01</div>
+          <h2>1. Developer &amp; App Identification</h2>
+        </div>
         <p>
-          Account profiles, match histories, and trophy scores are retained as long as your account remains active. If an account is inactive for more than 24 consecutive months or if a deletion request is received, the associated profile and identifiers are permanently purged or anonymized.
+          <strong>WallWar</strong> is a tactical turn-based strategy board game published on the Google Play Store under package identifier <code>com.wallwar.game</code>.
         </p>
-      </div>
 
-      <div class="delete-steps">
-        <h3>How to Request Account and Data Deletion</h3>
-        <p>You can request the permanent deletion of your account and all associated data at any time via either of the following methods:</p>
+        <div class="card-grid">
+          <div class="glass-card">
+            <div class="card-title">Developer Entity</div>
+            <p><strong>Majid Moharami</strong></p>
+            <p style="font-size: 0.88rem; color: var(--text-dim); margin: 0;">Sole Creator &amp; Independent Developer</p>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">Developer Contact</div>
+            <p><a href="mailto:Majid.moharami79@gmail.com">Majid.moharami79@gmail.com</a></p>
+            <p style="font-size: 0.88rem; color: var(--text-dim); margin: 0;">Personal Developer Email</p>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">Game Support &amp; Compliance</div>
+            <p><a href="mailto:wallwar.game@gmail.com">wallwar.game@gmail.com</a></p>
+            <p style="font-size: 0.88rem; color: var(--text-dim); margin: 0;">Official Compliance Desk</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Data Collection -->
+      <section id="data-collection" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">02</div>
+          <h2>2. Categories of Data We Collect</h2>
+        </div>
+        <p>
+          We adhere strictly to the principle of <strong>data minimization</strong>. We collect only what is strictly necessary to authenticate guest players, maintain fair leaderboards, prevent cheating, and display optional rewarded video ads:
+        </p>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Data Elements</th>
+                <th>Collection Mode</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Device or Other IDs</strong></td>
+                <td>
+                  <span class="tag cyan">Android ID</span>
+                  <span class="tag cyan">Google AAID</span>
+                  <span class="tag cyan">Firebase ID</span>
+                  <span class="tag cyan">Nakama UUID</span>
+                </td>
+                <td>Automatic</td>
+                <td>Guest account persistence, fraud prevention, anti-cheat, matchmaking, and ad attribution.</td>
+              </tr>
+              <tr>
+                <td><strong>App Performance &amp; Diagnostics</strong></td>
+                <td>Crash logs, match disconnect recovery metrics, framerate, session length.</td>
+                <td>Automatic (Firebase)</td>
+                <td>Game stability, real-time match recovery, and bug resolution.</td>
+              </tr>
+              <tr>
+                <td><strong>Usage &amp; Analytics</strong></td>
+                <td>Screen views, levels played, in-game virtual economy stats (coins earned/spent).</td>
+                <td>Automatic (Firebase Analytics)</td>
+                <td>Game economy balancing and feature optimization.</td>
+              </tr>
+              <tr>
+                <td><strong>Personal &amp; Account Info</strong></td>
+                <td>Display name, email address, optional profile avatar.</td>
+                <td>User-Provided (Google Sign-In)</td>
+                <td>Cross-device sync and public leaderboard ranking display.</td>
+              </tr>
+              <tr>
+                <td><strong>In-App Purchases</strong></td>
+                <td>Google Play order IDs, purchase tokens, SKU identifier. (No credit cards stored).</td>
+                <td>Via Google Play Billing</td>
+                <td>Fulfilling virtual coin bundles and validating genuine purchases.</td>
+              </tr>
+              <tr>
+                <td><strong>Location Data</strong></td>
+                <td><span class="tag emerald">None (Zero Collection)</span></td>
+                <td>Not Collected</td>
+                <td>We do not request, access, or log GPS or cellular location data.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. Device IDs -->
+      <section id="device-ids" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">03</div>
+          <h2>3. Device or Other Identifiers (Play Console Declaration)</h2>
+        </div>
+        <p>
+          In our Play Console Data Safety declaration, we explicitly disclose the collection and processing of <strong>Device or other IDs</strong>:
+        </p>
+
+        <div class="glass-card highlight">
+          <div class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            Technical Breakdown of Collected Identifiers
+          </div>
+          <ul>
+            <li>
+              <strong>Android ID (Settings.Secure.ANDROID_ID) / UUID:</strong>
+              When playing as Guest, the app reads a hardware-backed identifier or generates a unique UUID. Transmitted securely via TLS to our Nakama server, this allows guest duelists to retain their coins, skins, and trophies across app restarts without forcing account registration, while preventing multi-account smurfing and matchmaking abuse.
+            </li>
+            <li>
+              <strong>Google Advertising ID (AAID):</strong>
+              Used by Google Mobile Ads (AdMob) and Adivery SDK for optional rewarded video ads (e.g. watch a video to receive bonus in-game coins). Players can reset or delete their advertising ID at any time via: <code>Settings &gt; Google &gt; Ads &gt; Delete advertising ID</code>.
+            </li>
+            <li>
+              <strong>Firebase Installation ID (FID) &amp; FCM Token:</strong>
+              Assigned to uniquely route match-turn push notifications and measure installation retention metrics.
+            </li>
+            <li>
+              <strong>Nakama Server User ID:</strong>
+              A unique cryptographic UUID generated on our multiplayer servers to match duelists into competitive arenas and update seasonal leaderboard rankings.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. Location Minimization -->
+      <section id="location-data" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">04</div>
+          <h2>4. Location Data Minimization (Google Play Compliance)</h2>
+        </div>
+        <p>
+          Addressing Google Play's <em>"Minimize your use of location data to protect user privacy"</em> policy:
+        </p>
+
+        <div class="glass-card emerald">
+          <div class="card-title" style="color: #34d399;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            Zero Geolocation Tracking Guarantee
+          </div>
+          <ul>
+            <li><strong>Zero Location Permissions:</strong> WallWar does not declare or request <code>ACCESS_FINE_LOCATION</code>, <code>ACCESS_COARSE_LOCATION</code>, or background location permissions in its manifest.</li>
+            <li><strong>No GPS or Sensor Tracking:</strong> We do not track, collect, record, or share GPS coordinates or geographic paths of users.</li>
+            <li><strong>Network Routing:</strong> Standard IP addresses are used solely at the socket layer to route multiplayer packets to the nearest game server and are not converted into precise physical user addresses.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. Personal Info Sharing & No Sale -->
+      <section id="data-sharing" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">05</div>
+          <h2>5. Personal Information Sharing &amp; No Sale of Data</h2>
+        </div>
+        <p>
+          Addressing Google Play's <em>"Shares Personal Information"</em> policy and international privacy mandates:
+        </p>
+
+        <div class="card-grid">
+          <div class="glass-card">
+            <div class="card-title">&#128683; 100% No Sale of Data</div>
+            <p>
+              WallWar does <strong>never sell, rent, lease, or monetize</strong> user personal data, device identifiers, or gameplay records to third-party data brokers or advertisers.
+            </p>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">&#128274; Strict Service Providers</div>
+            <p>
+              Data is only transmitted to certified technical infrastructure providers (Google Play Services, Firebase, Nakama, AdMob, Adivery) exclusively to execute necessary game functions.
+            </p>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">&#128737;&#65039; No Cross-App Tracking</div>
+            <p>
+              We do not merge user identity across unrelated applications or track users across external third-party apps or websites.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Purpose of Processing -->
+      <section id="purpose" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">06</div>
+          <h2>6. Purpose of Data Processing</h2>
+        </div>
+        <p>We process collected data exclusively for legitimate operational purposes:</p>
         <ol>
-          <li>
-            <strong>Via Email (Recommended):</strong> Send an email to <a href="mailto:wallwar.game@gmail.com?subject=WallWar%20-%20Data%20Deletion%20Request">wallwar.game@gmail.com</a> or <a href="mailto:Majid.moharami79@gmail.com?subject=WallWar%20-%20Data%20Deletion%20Request">Majid.moharami79@gmail.com</a> with the subject line <code>"WallWar - Data Deletion Request"</code>. Please include your in-game Display Name, user ID (from the in-game Profile or Settings screen), or the Google Account email associated with the game.
-          </li>
-          <li>
-            <strong>In-App Sign Out:</strong> You can disconnect your Google account from the game at any time by navigating to <code>Profile &gt; Sign Out</code>.
-          </li>
+          <li><strong>Core App Functionality:</strong> Real-time player-versus-player (PvP) matchmaking, validating wall placements and pawn moves, recording match history, maintaining leaderboards, and honoring virtual coin balances.</li>
+          <li><strong>Account Authentication &amp; State Synchronization:</strong> Allowing players to save duel records locally and in the cloud, and restore progress across sessions.</li>
+          <li><strong>Security, Anti-Cheat &amp; Fraud Prevention:</strong> Preventing automated botting, detecting modified game clients, verifying in-app billing tokens, and maintaining fair competitive integrity.</li>
+          <li><strong>Analytics &amp; Diagnostics:</strong> Monitoring server uptime, identifying disconnect causes during live online matches, and assessing which arenas or skins are popular.</li>
+          <li><strong>Advertising &amp; In-Game Monetization:</strong> Serving optional rewarded video ads and interstitials through verified mobile ad networks.</li>
         </ol>
-        <p style="margin-top: 0.75rem; font-size: 0.9rem; color: #cbd5e1;">
-          <em>Processing Timeline:</em> Once a verified deletion request is received, all associated user records—including your Nakama account, custom uploaded avatar, leaderboard records, and match history—will be permanently erased from our servers within <strong>30 days</strong>.
+      </section>
+
+      <!-- 7. Third-Party Services -->
+      <section id="third-parties" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">07</div>
+          <h2>7. Third-Party Service Providers &amp; External Policies</h2>
+        </div>
+        <p>WallWar integrates industry-standard SDKs. Each provider operates under their own privacy policy:</p>
+
+        <div class="card-grid">
+          <div class="glass-card">
+            <div class="card-title">Google Play Services</div>
+            <p style="font-size: 0.88rem;">Core platform support, in-app billing, and Credential Manager.</p>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">View Google Privacy Policy &rarr;</a>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">Google AdMob</div>
+            <p style="font-size: 0.88rem;">Displaying optional rewarded and interstitial advertisements.</p>
+            <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">View AdMob Policy &rarr;</a>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">Google Firebase</div>
+            <p style="font-size: 0.88rem;">Analytics, Crashlytics diagnostics, and push messaging (FCM).</p>
+            <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">View Firebase Policy &rarr;</a>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">Heroic Labs Nakama</div>
+            <p style="font-size: 0.88rem;">Open-source multiplayer game server handling PvP matches &amp; leaderboards.</p>
+            <a href="https://heroiclabs.com/privacy-policy/" target="_blank" rel="noopener noreferrer">View Nakama Policy &rarr;</a>
+          </div>
+          <div class="glass-card">
+            <div class="card-title">Adivery Ad SDK</div>
+            <p style="font-size: 0.88rem;">Rewarded and interstitial video advertising platform.</p>
+            <a href="https://adivery.com/privacy/" target="_blank" rel="noopener noreferrer">View Adivery Policy &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Security -->
+      <section id="security" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">08</div>
+          <h2>8. Data Security &amp; Encryption in Transit</h2>
+        </div>
+        <p>We are committed to state-of-the-art data protection standards:</p>
+        <ul>
+          <li><strong>Encryption in Transit:</strong> All network traffic between WallWar and backend servers is encrypted using modern <strong>Transport Layer Security (TLS 1.2 / TLS 1.3, HTTPS)</strong> and <strong>Secure WebSockets (WSS)</strong>.</li>
+          <li><strong>Payment Card Safety:</strong> WallWar never handles or stores payment card data. All financial transactions are executed exclusively within Google Play's PCI-DSS compliant billing infrastructure.</li>
+          <li><strong>Access Controls:</strong> Server administrative interfaces and game databases are strictly secured behind firewall barriers and tokenized authentication.</li>
+        </ul>
+      </section>
+
+      <!-- 9. Retention & Deletion -->
+      <section id="retention-deletion" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">09</div>
+          <h2>9. Data Retention &amp; Account Deletion (Google Play Compliance)</h2>
+        </div>
+        <p>
+          In accordance with Google Play's <strong>User Data policy regarding account and data deletion</strong>, players have complete control over their personal data:
         </p>
-      </div>
-    </section>
 
-    <!-- 10. Children -->
-    <section id="children">
-      <h2>10. Children's Privacy</h2>
-      <p>
-        <strong>WallWar</strong> is a general-audience strategy board game. It is not directed at children under the age of 13 (or under 16 in the European Economic Area). We do not knowingly collect personal identifiable information from children.
-      </p>
-      <p>
-        If you are a parent or legal guardian and believe that your child has provided us with personal information without your consent, please contact us immediately at <a href="mailto:wallwar.game@gmail.com">wallwar.game@gmail.com</a> or <a href="mailto:Majid.moharami79@gmail.com">Majid.moharami79@gmail.com</a>. We will promptly investigate and permanently delete such records from our databases.
-      </p>
-    </section>
+        <div class="stepper">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Choose In-App Sign Out or Email Deletion</h4>
+              <p>You can disconnect your Google account inside the game under <code>Profile &gt; Sign Out</code> or request total profile erasure via email.</p>
+            </div>
+          </div>
 
-    <!-- 11. Changes & Direct Access -->
-    <section id="changes">
-      <h2>11. Policy Updates & Direct Access Assurance</h2>
-      <p>
-        We may update this Privacy Policy periodically to reflect enhancements to our gameplay, SDK updates, or applicable Google Play Developer Program policies. Any revisions are published directly on this permanent URL with an updated Effective Date.
-      </p>
-      <p>
-        <strong>Direct Link Assurance:</strong> This document is hosted permanently at <code>https://majid-moharami.github.io/Wall-War-Policy/</code> as a direct URL to satisfy Google Play's prohibition of indirect or multi-step privacy policy navigation.
-      </p>
-    </section>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Send Deletion Request</h4>
+              <p>
+                Email either <a href="mailto:wallwar.game@gmail.com?subject=WallWar%20-%20Data%20Deletion%20Request">wallwar.game@gmail.com</a> or <a href="mailto:Majid.moharami79@gmail.com?subject=WallWar%20-%20Data%20Deletion%20Request">Majid.moharami79@gmail.com</a> with subject <code>"WallWar - Data Deletion Request"</code> including your player display name or Google Play email.
+              </p>
+            </div>
+          </div>
 
-    <!-- 12. Contact -->
-    <section id="contact">
-      <h2>12. Contact Us</h2>
-      <p>
-        If you have any questions, compliance inquiries, feedback, or requests regarding this Privacy Policy or our data practices, please reach out directly:
-      </p>
-      <div class="contact-box">
-        <div><strong>Developer:</strong> Majid Moharami</div>
-        <div><strong>Application:</strong> WallWar (com.wallwar.game)</div>
-        <div><strong>Developer Email:</strong> <a class="contact-email" href="mailto:Majid.moharami79@gmail.com">Majid.moharami79@gmail.com</a></div>
-        <div><strong>Support & Compliance Email:</strong> <a class="contact-email" href="mailto:wallwar.game@gmail.com">wallwar.game@gmail.com</a></div>
-        <div><strong>Permanent Public Hosting:</strong> <a href="https://majid-moharami.github.io/Wall-War-Policy/">https://majid-moharami.github.io/Wall-War-Policy/</a></div>
-      </div>
-    </section>
-  </main>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Permanent Purge Within 30 Days</h4>
+              <p>All Nakama user records, trophy rankings, and match histories are permanently purged from all production servers within <strong>30 calendar days</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Children -->
+      <section id="children" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">10</div>
+          <h2>10. Children's Privacy</h2>
+        </div>
+        <p>
+          <strong>WallWar</strong> is a general-audience strategy board game. It is not directed at children under the age of 13 (or under 16 in the European Economic Area). We do not knowingly collect personal identifiable information from children.
+        </p>
+        <p>
+          If you believe a child has provided us with personal information, please contact us immediately at <a href="mailto:wallwar.game@gmail.com">wallwar.game@gmail.com</a> or <a href="mailto:Majid.moharami79@gmail.com">Majid.moharami79@gmail.com</a> for prompt removal.
+        </p>
+      </section>
+
+      <!-- 11. Direct Access Verification -->
+      <section id="changes" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">11</div>
+          <h2>11. Policy Updates &amp; Direct Access Verification</h2>
+        </div>
+        <p>
+          We may update this Privacy Policy periodically. Any revisions are published directly to this permanent URL with an updated Effective Date.
+        </p>
+        <p>
+          <strong>Direct Access Assurance:</strong> Hosted permanently at <code>https://majid-moharami.github.io/Wall-War-Policy/</code> as an unauthenticated single-page document to satisfy Google Play's direct link requirements.
+        </p>
+      </section>
+
+      <!-- 12. Contact -->
+      <section id="contact" class="policy-section">
+        <div class="section-header">
+          <div class="section-icon">12</div>
+          <h2>12. Contact Us</h2>
+        </div>
+        <p>
+          For privacy inquiries, data deletion requests, or compliance questions:
+        </p>
+
+        <div class="contact-card">
+          <div class="contact-col">
+            <h4>Developer Name</h4>
+            <p>Majid Moharami</p>
+          </div>
+          <div class="contact-col">
+            <h4>Application</h4>
+            <p>WallWar (com.wallwar.game)</p>
+          </div>
+          <div class="contact-col">
+            <h4>Developer Contact</h4>
+            <p><a href="mailto:Majid.moharami79@gmail.com">Majid.moharami79@gmail.com</a></p>
+          </div>
+          <div class="contact-col">
+            <h4>Official Game Support</h4>
+            <p><a href="mailto:wallwar.game@gmail.com">wallwar.game@gmail.com</a></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span>Copied Privacy Policy URL to clipboard!</span>
+  </div>
 
   <footer>
-    <p>&copy; 2026 Majid Moharami. All rights reserved. WallWar is a registered strategy mobile game on Google Play.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #475569;">
-      Direct, single-page compliance documentation hosted via GitHub Pages for public, unauthenticated verification.
+    <p>&copy; 2026 Majid Moharami. All rights reserved. WallWar is an Android mobile game on Google Play.</p>
+    <p style="font-size: 0.8rem; color: #475569;">
+      Direct Google Play compliance portal hosted on GitHub Pages.
     </p>
   </footer>
 
+  <script>
+    function copyPolicyUrl() {
+      const url = "https://majid-moharami.github.io/Wall-War-Policy/";
+      navigator.clipboard.writeText(url).then(() => {
+        const toast = document.getElementById("toast");
+        toast.classList.add("show");
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, 3000);
+      });
+    }
+
+    function filterSections() {
+      const query = document.getElementById("policy-filter").value.toLowerCase();
+      const sections = document.querySelectorAll(".policy-section");
+      sections.forEach(section => {
+        const text = section.innerText.toLowerCase();
+        if (text.includes(query)) {
+          section.style.display = "";
+        } else {
+          section.style.display = "none";
+        }
+      });
+    }
+
+    // Scrollspy for sidebar active link highlight
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('.policy-section');
+      const navLinks = document.querySelectorAll('.toc-link');
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 140;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
