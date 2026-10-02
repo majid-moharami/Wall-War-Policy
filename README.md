@@ -6,7 +6,7 @@ Official public compliance and privacy policy website for **WallWar** (`com.wall
 - **Primary URL**: [https://majid-moharami.github.io/Wall-War-Policy/](https://majid-moharami.github.io/Wall-War-Policy/)
 - **Direct Privacy Endpoint**: [https://majid-moharami.github.io/Wall-War-Policy/privacy.html](https://majid-moharami.github.io/Wall-War-Policy/privacy.html)
 
-## 📋 Google Play Console Declaration Alignment
+## 📋 Google Play Console Compliance
 This document is directly accessible without authentication, landing page redirects, or multi-step navigation:
 - **Direct Link Compliance**: Satisfies Google Play requirement that the URL points directly to the privacy policy text.
 - **Data Safety**: Discloses Device or other IDs (Android ID, AAID, Firebase ID, Nakama UUID), Diagnostics, Purchases.
@@ -15,5 +15,5 @@ This document is directly accessible without authentication, landing page redire
 - **Account & Data Deletion**: Provides in-app sign out and verified email deletion within 30 days.
 
 ## 📧 Contact
-- **Developer**: Majid Moharami (`Majid.moharami79@gmail.com`)
+- **Developer**: Majid Moharami
 - **Support & Compliance**: `wallwar.game@gmail.com`
